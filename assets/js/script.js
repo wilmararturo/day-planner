@@ -5,7 +5,8 @@ $(document).ready(function () {
     var hourDivEl = $("<div>").addClass("row time-block");
     var hourLabelEl = $("<div>").addClass("col-md-1 hour");
     var hourDescriptionEl = $("<textarea>").addClass("col-md-10 description");
-    var saveButtonEl = $("<button>").addClass("btn saveBtn col-md-1");
+    var saveButtonIcon = $("<span>").addClass("far fa-save");
+    var saveButtonEl = $("<button>").addClass("btn saveBtn col-md-1").html(saveButtonIcon);
 
     var jumbotronDate = moment().format("dddd DD MMMM, YYYY");
 
