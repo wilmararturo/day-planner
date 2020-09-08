@@ -10,17 +10,22 @@ $(document).ready(function () {
 
     var jumbotronDate = moment().format("dddd DD MMMM, YYYY");
 
+    var storagePrefix = moment().format("YYYYMMDD");
+
     var nowHour = moment().hour()
+
+    var hourFormat24 = "HH:00";
+    var hourFormat12 = "h A";
 
     function saveHourEntryText(descriptionEL) {
         var hourEntryText = descriptionEL.val().trim();
         var hourDescriptionID = descriptionEL.attr("id");
-        localStorage.setItem(hourDescriptionID, hourEntryText);
+        localStorage.setItem(storagePrefix + hourDescriptionID, hourEntryText);
         refreshDay();
     }
 
     function getHourEntryText(hourDescriptionID) {
-        var hourEntryText = localStorage.getItem(hourDescriptionID) || "";
+        var hourEntryText = localStorage.getItem(storagePrefix + hourDescriptionID) || "";
         return hourEntryText;
 
 
@@ -32,7 +37,7 @@ $(document).ready(function () {
 
         // loop troush the hours of the day to create grid
         for (i = 8; i < 19; i++) {
-            var myHour = moment().hour(i).format("HH:00");
+            var myHour = moment().hour(i).format(hourFormat12);
             var hourDivID = "hour-" + moment().hour(i).format("HH");
             var hourDescriptionID = "text-" + hourDivID;
             var buttonID = "button-" + hourDivID;
