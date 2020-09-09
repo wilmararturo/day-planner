@@ -11,7 +11,7 @@ A simple day planner that allows the user to save events in one hour increments 
 *  Events will persist reloads throughout the day.
 
 
-![day planner demo](./assets/05-third-party-apis-homework-demo.gif)
+![day planner demo](./assets/Work Day Scheduler.gif)
 
 ## Notes 
 
